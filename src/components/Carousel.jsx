@@ -26,10 +26,9 @@ const slides = [
     linkText: "See Project",
   },
   {
-    backgroundImage: 'url("/img3.png")',
-    title: "JobNest – Job Portal System",
-    description:
-      "Multi-role job platform for Admin, HR, and Job Seekers. Includes job posting, applications, resume upload and preview, dashboards, and automated email notifications.",
+    backgroundImage: 'url("/resumeai.png")',
+    title: "AI – Resume Improver",
+    description: "user acn upload resmue and AI will help to improve Resume",
     link: "https://jobnest-frontend-i8eq.onrender.com/",
     linkText: "See Project",
   },
@@ -49,7 +48,10 @@ function Carousel() {
   };
 
   return (
-    <div id="projects" className="relative w-[90%] md:w-[85%] lg:w-[80%] mx-auto bg-[#FAFAFA] py-10 overflow-hidden">
+    <div
+      id="projects"
+      className="relative w-[90%] md:w-[85%] lg:w-[80%] mx-auto bg-[#FAFAFA] py-10 overflow-hidden"
+    >
       {/* Previous Button */}
       <button
         onClick={prevSlide}

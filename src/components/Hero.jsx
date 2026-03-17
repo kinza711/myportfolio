@@ -70,15 +70,15 @@ const Hero = () => {
           <div className="relative w-full aspect-square flex items-center justify-center animate-float">
             <div className="absolute w-40 h-40 rounded-3xl bg-gradient-to-tr from-brand-navy to-brand-cyan rotate-45 opacity-40 blur-sm"></div>
 
-            <div className="relative w-32 h-32 rounded-2xl bg-gradient-to-tr from-brand-navy to-brand-teal shadow-2xl flex items-center justify-center border border-white/20">
+            <div className="relative animate-float w-32 h-32 rounded-2xl bg-gradient-to-tr from-brand-navy to-brand-teal shadow-2xl flex items-center justify-center border border-white/20">
               <div className="w-16 h-16 rounded-full border-16 border-dashed border-brand-cyan/50 animate-spin"></div>
             </div>
 
-            <div className="absolute animate-bounce w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center top-20 right-10 border border-brand-cyan/30">
+            <div className="absolute w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center top-20 right-10 border border-brand-cyan/30">
               <span className="text-xs font-bold text-brand-teal">AI</span>
             </div>
 
-            <div className="absolute animate-bounce w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center bottom-20 left-10 border border-brand-navy/30">
+            <div className="absolute  w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center bottom-20 left-10 border border-brand-navy/30">
               <span className="text-xs font-bold text-brand-navy">MERN</span>
             </div>
           </div>

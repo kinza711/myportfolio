@@ -29,7 +29,7 @@ const slides = [
     backgroundImage: 'url("/resumeai.png")',
     title: "AI – Resume Improver",
     description: "user acn upload resmue and AI will help to improve Resume",
-    link: "https://jobnest-frontend-i8eq.onrender.com/",
+    link: "https://ai-resume-4not.onrender.com",
     linkText: "See Project",
   },
 ];

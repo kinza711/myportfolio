@@ -17,15 +17,15 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
             </span>
-            AVAILABLE FOR REMOTE MERN PROJECTS
+            AVAILABLE FOR REMOTE / ONSITE MERN PROJECTS
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-heading font-serif font-bold leading-tight mb-6">
+          <h1 className="text-5xl lg:text-7sxl font-heading font-serif font-bold leading-tight mb-6">
             Hi, I'm <span className="text-gradient">Kinza</span>
           </h1>
 
           <h2 className="text-2xl lg:text-3xl font-semibold text-brand-navy mb-6">
-            MERN Stack & React Developer
+            AI_Focused MERN Stack & React Developer
           </h2>
 
           <p className="text-xl text-brand-muted mb-8 max-w-xl leading-relaxed">

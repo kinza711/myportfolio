@@ -94,7 +94,7 @@ const Navbar = () => {
             Stack
           </a>
           <a href="#projects" className="hover:text-brand-cyan transition">
-            Portfolio
+            Projects
           </a>
           <a
             href="#contact"

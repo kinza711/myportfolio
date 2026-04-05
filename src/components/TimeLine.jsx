@@ -52,7 +52,7 @@ const TimeLine = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Heading */}
         <h2 className="text-4xl font-bold text-gray-900 mb-16">
-          The Professional Timeline
+          My Professional Journey
         </h2>
 
         {/* Timeline Wrapper */}

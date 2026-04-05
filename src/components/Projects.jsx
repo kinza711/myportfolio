@@ -11,7 +11,13 @@ const servicesData = [
     title: "WordPress Development",
     description:
       "Custom WordPress websites with responsive design, plugin integration, and client-ready delivery. Fast, clean, and easy to manage.",
-    tags: ["WordPress", "Responsive", "Custom Themes"],
+    tags: [
+      "WordPress",
+      "E-commerce",
+      "Elementor Pro",
+      "Responsive",
+      "Custom Themes",
+    ],
     color: "border-b-[#088395]",
     textColor: "text-[#088395]",
     bgColor: "bg-[#088395]/5",
@@ -21,7 +27,13 @@ const servicesData = [
     title: "React Development",
     description:
       "Modern, fast, and interactive web interfaces built with React.js and Tailwind CSS. Pixel-perfect designs with smooth animations.",
-    tags: ["React.js", "Tailwind CSS", "Framer Motion"],
+    tags: [
+      "React.js",
+      "Tailwind CSS",
+      "Landing Pages",
+      "Poerfolio Web",
+      "Framer Motion",
+    ],
     color: "border-b-[#0a2342]",
     textColor: "text-[#0a2342]",
     bgColor: "bg-[#0a2342]/5",

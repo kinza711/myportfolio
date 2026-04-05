@@ -25,7 +25,7 @@ const Hero = () => {
           </h1>
 
           <h2 className="text-2xl lg:text-3xl font-semibold text-brand-navy mb-6">
-            AI_Focused MERN Stack & React Developer
+            AI-Powered MERN Stack Developer | OpenAI & RAG Integration
           </h2>
 
           <p className="text-xl text-brand-muted mb-8 max-w-xl leading-relaxed">
@@ -74,11 +74,18 @@ const Hero = () => {
               <div className="w-16 h-16 rounded-full border-16 border-dashed border-brand-cyan/50 animate-spin"></div>
             </div>
 
-            <div className="absolute w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center top-20 right-10 border border-brand-cyan/30">
-              <span className="text-xs font-bold text-brand-teal">AI</span>
+            {/* Top right */}
+            <div className="absolute w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center top-16 right-8 border border-brand-cyan/30">
+              <span className="text-xs font-bold text-brand-teal">OpenAI</span>
             </div>
 
-            <div className="absolute  w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center bottom-20 left-10 border border-brand-navy/30">
+            {/* Middle right */}
+            <div className="absolute w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center top-1/2 right-4 border border-brand-cyan/30">
+              <span className="text-xs font-bold text-brand-teal">RAG</span>
+            </div>
+
+            {/* Bottom left */}
+            <div className="absolute w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center bottom-16 left-8 border border-brand-navy/30">
               <span className="text-xs font-bold text-brand-navy">MERN</span>
             </div>
           </div>

@@ -27,8 +27,9 @@ const slides = [
   },
   {
     backgroundImage: 'url("/resumeai.png")',
-    title: "AI – Resume Improver",
-    description: "user acn upload resmue and AI will help to improve Resume",
+    title: "AI Resume Improver",
+    description:
+      "Upload your resume and let AI analyze, score, and improve it. Supports PDF and DOCX formats with ATS scoring and smart suggestions powered by OpenAI API.",
     link: "https://ai-resume-4not.onrender.com",
     linkText: "See Project",
   },

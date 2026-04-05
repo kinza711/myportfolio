@@ -1,117 +1,144 @@
-import { useState } from "react";
-import { motion, Reorder } from "framer-motion";
 
-const initialSkills = {
-  frontend: [
-    "React.js",
-    "Tailwind CSS",
-    "GSAP",
-    "Locomotive Scroll",
-    "Axios",
-    "Responsive Design",
-  ],
-  backend: [
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Mongoose",
-    "JWT Authentication",
-    "Express-Session",
-    "Multer",
-    "Nodemailer",
-    "Cloudinary",
-  ],
-  ai: ["Chatbase", "RAG", "Stitch UI"],
-};
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const skillsData = [
+  {
+    category: "Frontend",
+    borderColor: "border-b-[#088395]",
+    bgHover: "hover:bg-[#088395]/10",
+    textColor: "text-[#088395]",
+    dotColor: "bg-[#088395]",
+    skills: [
+      "React.js",
+      "JavaScript ES6+",
+      "Tailwind CSS",
+      "Axios",
+      "Responsive Design",
+      "Framer Motion",
+      "GSAP",
+    ],
+  },
+  {
+    category: "Backend",
+    borderColor: "border-b-[#0a2342]",
+    bgHover: "hover:bg-[#0a2342]/10",
+    textColor: "text-[#0a2342]",
+    dotColor: "bg-[#0a2342]",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "REST APIs",
+      "JWT Auth",
+      "Multer",
+      "Nodemailer",
+      "Cloudinary",
+      "Express-Session",
+    ],
+  },
+  {
+    category: "AI & Integrations",
+    borderColor: "border-b-[#0e7490]",
+    bgHover: "hover:bg-[#0e7490]/10",
+    textColor: "text-[#0e7490]",
+    dotColor: "bg-[#0e7490]",
+    skills: [
+      "OpenAI API",
+      "Chatbase",
+      "RAG Concept",
+      "Embeddings",
+      "Custom AI Chatbot",
+      "AI Integration",
+    ],
+  },
+];
+
+// Random float animation per skill
+const getFloatAnimation = (index) => ({
+  y: [0, -10 - (index % 3) * 5, 0],
+  x: [0, (index % 2 === 0 ? 6 : -6), 0],
+  rotate: [0, index % 2 === 0 ? 2 : -2, 0],
+  transition: {
+    duration: 3 + (index % 4) * 0.7,
+    repeat: Infinity,
+    ease: "easeInOut",
+    delay: index * 0.15,
+  },
+});
 
 const Skills = () => {
-  const [skills, setSkills] = useState(initialSkills);
+  const [activeCategory, setActiveCategory] = useState("Frontend");
+  const active = skillsData.find((s) => s.category === activeCategory);
 
   return (
     <section className="py-24 bg-gray-50/50" id="skills">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-heading font-bold mb-16">
-          My Digital Toolbox
-        </h2>
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            My Digital Toolbox
+          </h2>
+          <p className="text-gray-500 text-lg">
+            Technologies I work with to build modern web applications
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Frontend */}
-          <div className="glass-card p-8 rounded-3xl border-b-4 border-b-brand-cyan hover:shadow-xl transition-transform hover:-translate-y-2">
-            <h3 className="text-2xl font-bold mb-6 text-brand-cyan">
-              Frontend
-            </h3>
-            <Reorder.Group
-              axis="y"
-              values={skills.frontend}
-              onReorder={(newOrder) =>
-                setSkills((prev) => ({ ...prev, frontend: newOrder }))
-              }
-              className="flex flex-wrap justify-center gap-2"
+        {/* Tab Buttons */}
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {skillsData.map((item) => (
+            <button
+              key={item.category}
+              onClick={() => setActiveCategory(item.category)}
+              className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 border-2 ${
+                activeCategory === item.category
+                  ? `${item.textColor} border-current bg-white shadow-md`
+                  : "text-gray-400 border-gray-200 hover:border-gray-300"
+              }`}
             >
-              {skills.frontend.map((skill) => (
-                <Reorder.Item
-                  key={skill}
-                  value={skill}
-                  whileDrag={{ scale: 1.2 }}
-                  className="px-3 py-1 bg-gray-100 rounded text-sm font-medium cursor-grab hover:bg-brand-cyan/10"
-                >
-                  {skill}
-                </Reorder.Item>
-              ))}
-            </Reorder.Group>
-          </div>
+              {item.category}
+            </button>
+          ))}
+        </div>
 
-          {/* Backend */}
-          <div className="glass-card p-8 rounded-3xl border-b-4 border-b-brand-navy hover:shadow-xl transition-transform hover:-translate-y-2">
-            <h3 className="text-2xl font-bold mb-6 text-brand-navy">
-              Backend & Cloud
-            </h3>
-            <Reorder.Group
-              axis="y"
-              values={skills.backend}
-              onReorder={(newOrder) =>
-                setSkills((prev) => ({ ...prev, backend: newOrder }))
-              }
-              className="flex flex-wrap justify-center gap-2"
+        {/* Floating Skills Box */}
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 min-h-[220px] flex flex-wrap gap-4 justify-center items-center"
+        >
+          {active.skills.map((skill, index) => (
+            <motion.span
+              key={skill}
+              animate={getFloatAnimation(index)}
+              whileHover={{ scale: 1.15, zIndex: 10 }}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-50 border border-gray-100 text-gray-700 font-medium text-sm shadow-sm cursor-default transition-colors duration-300 ${active.bgHover}`}
             >
-              {skills.backend.map((skill) => (
-                <Reorder.Item
-                  key={skill}
-                  value={skill}
-                  whileDrag={{ scale: 1.2 }}
-                  className="px-3 py-1 bg-gray-100 rounded text-sm font-medium cursor-grab hover:bg-brand-navy/10"
-                >
-                  {skill}
-                </Reorder.Item>
-              ))}
-            </Reorder.Group>
-          </div>
+              <span className={`w-2 h-2 rounded-full animate-pulse ${active.dotColor}`} />
+              {skill}
+            </motion.span>
+          ))}
+        </motion.div>
 
-          {/* AI / Tools */}
-          <div className="glass-card p-8 rounded-3xl border-b-4 border-b-brand-teal hover:shadow-xl transition-transform hover:-translate-y-2">
-            <h3 className="text-2xl font-bold mb-6 text-brand-teal">
-              AI & Tools
-            </h3>
-            <Reorder.Group
-              axis="y"
-              values={skills.ai}
-              onReorder={(newOrder) =>
-                setSkills((prev) => ({ ...prev, ai: newOrder }))
-              }
-              className="flex flex-wrap justify-center gap-2"
+        {/* Bottom Stats */}
+        <div className="grid grid-cols-3 gap-6 mt-10">
+          {skillsData.map((item) => (
+            <div
+              key={item.category}
+              onClick={() => setActiveCategory(item.category)}
+              className={`cursor-pointer text-center p-6 bg-white rounded-2xl border-b-4 ${item.borderColor} shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1`}
             >
-              {skills.ai.map((skill) => (
-                <Reorder.Item
-                  key={skill}
-                  value={skill}
-                  whileDrag={{ scale: 1.2 }}
-                  className="px-3 py-1 bg-gray-100 rounded text-sm font-medium cursor-grab  hover:bg-brand-teal/10"
-                >
-                  {skill}
-                </Reorder.Item>
-              ))}
-            </Reorder.Group>
-          </div>
+              <div className={`text-3xl font-bold mb-1 ${item.textColor}`}>
+                {item.skills.length}+
+              </div>
+              <div className="text-gray-500 text-sm font-medium">
+                {item.category}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import Img from "/kinza.jpg";
+import Img from "/new kinza.jpg";
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);

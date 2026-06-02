@@ -9,7 +9,7 @@ const Chatbot = () => {
     <>
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-20 right-4 w-[90%] sm:w-[350px] h-[60vh] sm:h-[430px] flex flex-col rounded-2xl shadow-xl z-50 overflow-hidden animate-slide-up glass-effect">
+        <div className="fixed bottom-12 right-4 w-[90%] sm:w-[350px] h-[65vh] sm:h-[450px] flex flex-col rounded-2xl shadow-xl z-50 overflow-hidden animate-slide-up glass-effect">
           {/* Header */}
           <header className="bg-gradient-to-r from-[#1e609d] to-[#2097a7] via-[#036d68] p-4 flex items-center justify-between text-white">
             <div className="flex items-center gap-3">
